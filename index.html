@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/blood.css">
+		<link rel="stylesheet" href="css/nakama.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="img/monumento-a-los-heroes-de-la-independencia.jpg"></section>
+				<section>
+					<h2>Como empezar de cero en Python: Torciendo la curva de aprendizaje</h2>
+				</section>
+				<section>
+					<h3>Me presento...</h3>
+					<h1>Horacio F. Mayo</h1>
+					<h4>Humahuaca - Jujuy - Argentina</h4>
+					<p>Cátedra de Agroclimatología - FCA-UNJu</p>
+					<p>Cátedra de Informatica - FCA-UNJu</p>
+					<p>Contacto: @HoracioNakama (Twitter, Instagram, Telegram)</p>
+				</section>
+				<section>
+					<section>
+						<h2>Advertencia</h2>
+						<h3>Permitido interrumpir para aportar o preguntar. Es aburrido solo escuchar... y solo hablar.</h3>
+					</section>
+					<section>
+						<h2>Antes de empezar</h2>
+						<h3>Instalaremos Anaconda</h3>
+						<ul>
+							<p style="text-align:center;"><a target="_blank" href="https://www.continuum.io/downloads">www.continuum.io/downloads</a></p>
+							<li>Windows: Ejecutar el archivo exe e instalarlo en C:\Anaconda3</li>
+							<li>Ubuntu:</li>
+							<pre><code>:~$ bash Anaconda3-4.2.0-Linux-x86_64.sh</code></pre>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Inicio</h2>
+						<img src="img/Curva-de-aprendizaje.png">
+					</section>
+					<section>
+						<h2>Mi curva en 2015</h2>
+						<img src="img/patin en linea.jpg" alt="">
+					</section>
+					<section>
+						<h2>¿Qué Python utilizar? 2.x? 3.x?</h2>
+						<p>IMPORTANTE: por tutoriales, por comunidad, etc.</p>
+						<p>Truco: Print. En python 3.x es una función.</p>
+						<p>Print ("Hola Mundo")</p>
+						<p class="positivo"> <a target="_blank" href="https://www.youtube.com/watch?v=rCSNh_gwZlM">Charla Python 2 debe morir. Roberto Alsina - PyConAr 2012 </a></p>
+					</section>
+					<section>
+						<h2>¿Dónde aprendo Python?</h2>
+                        <p><a target="_blank" href="https://www.youtube.com/watch?v=VUti1RG6Jj8">PyConAr 2014 Rafaela - Introducción a Python - Facundo Batista</a></p>
+                        <p>PyConAr 2015 Mendoza - Python para iniciantes - Fernando Masanori </p>
+                        <p><a href="https://www.youtube.com/watch?v=MgRdg3s8n3E">PyConEs 2014 Zaragoza - Clases en Python Lo estas haciendo mal - Victor Terrón </a></p>
+                        <p><a target="_blank" href="http://pybonacci.org/2016/06/21/como-mejorar-tu-script-facilmente/">Como mejorar tu script fácilmente</a></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Instalar Python</h1>
+					</section>
+					<section>
+						<h2>Instalar Python</h2>
+						<ul>
+							<li>Windows: Ejecutable descargado de <a target="_blank" href="https://www.python.org/downloads/">www.python.org/downloads/</a></li>
+							<li>Linux:
+								<pre><code data-trim contenteditable>:~$ sudo apt-get install python
+:~$ sudo apt-get install python3</code></pre>
+								<ul>
+									<li>Ubuntu 14.04 - Python 2.7 (x defecto)</li>
+									<li>Ubuntu 16.04 - Python 3 (x defecto)</li>
+								</ul>
+							</li>
+						</ul>
+						<p class="negativo">Debian 7 el sudo instala Python 3.2</p>
+						<p class="positivo">Recomendación: En Linux bajarse el tar.gz de Python</p>
+						<p class="negativo">CUIDADO!! SIG Usan Python 2.7(Qgis, Arcgis, etc.)</p>
+					</section>
+						
+					<section>
+						<h2>Distribuciones de Python</h2>
+						<ul>
+							<li>Anaconda y Miniconda<span class="positivo"> (Recomendado para iniciar)</span>
+								<ul>
+									<li><a target="_blank" href="http://conda.pydata.org/miniconda.html">Miniconda</a></li>
+								</ul>
+							</li>
+							<li><a href="http://python-xy.github.io/">PythonXY</a>
+							<ul>
+								<li>Para Científicos</li>
+							</ul>
+							</li>
+							<li><a href="http://winpython.github.io/">WinPython (Windows 7/8/10.</a>
+							<ul>
+								<li>Portable o no</li>
+								<li>Spyder, Jupyter/Ipython o IDLE</li>
+							</ul>
+							</li>
+							<li><a href="https://wiki.python.org/moin/PythonDistributions">Más información</a></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Librerias y Entornos Virtuales</h2>
+					</section>
+					<section>
+						<h2>Instalar Librerias</h2>
+						<h3>PIP</h3>
+						<ul><li>LINUX</li></ul>
+						<pre><code data-trim contenteditable>
+~$ sudo apt-get install python-pip python-dev build essential
+~$ sudo pip install numpy</code></pre>
+						<ul><li>WINDOWS</li></ul>
+						<pre><code data-trim contenteditable>
+							pip install numpy</code></pre>
+							<h3>CONDA (ANACONDA)</h3>
+							<ul><li>WINDOWS O LINUX</li></ul>
+							<pre><code data-trim contenteditable>
+							:~$ conda search numpy
+:~$ conda install numpy=1.9.2</code></pre>
+					</section>
+					<section><h1>Entornos Virtuales</h1></section>
+					<section>
+						<h2>Opcion 1: VirtualEnv</h2>
+						<ol>
+							<li>Instalación (LINUX)
+								<pre><code data-trim contenteditable>:~$ sudo apt-get install virtualenv python-virtualenv
+:~$ sudo pip install virtualenv</pre></code>
+							</li>
+							<li>Ejecutar: <span class="nota">Se crea carpeta "mi entorno" y subcarpetas "bin, include, lib"</span></li>
+							<pre><code data-trim contenteditable>:~$ virtualenv nombreentorno</code></pre>
+							<li>Activar:
+								<span class="nota">Entro a la carpeta "entornovirtual"</span>
+								<pre><code data-trim contenteditable>:~$ source bin/activate
+(nombreentorno):~$</code></pre>
+							</li>
+							<li>Instalar paquetes:</li>
+							<pre><code data-trim contenteditable>(nombreentorno):~$ pip install numpy</code></pre>
+							<li>Desactivar:</li>
+							<pre><code data-trim contenteditable>(nombreentorno):~$ deactivate</code></pre>
+						</ol>
+					</section>
+					<section>
+						<h2>OPCION 2</h2>
+						<ul><li>Conda (Anaconda)</li></ul>
+						<pre><code data-trim contenteditable>:~$ conda create -n mientornovirtual python=x.x
+:~$ source activate mientornovirtual
+:~$ source deactivate
+:~$ conda info --envs</code></pre>
+						<p class="positivo"><a href="http://conda.pydata.org/docs/_downloads/conda-pip-virtualenv-translator.html">Recomendación: Link a Conda vs. pip vs. virtualenv </a></p>
+					</section>
+				</section>
+				<section>
+					<section>
+					<h1>VAMOS A LA PRACTICA!!</h1>
+					<h1>EMPECEMOS A UTILIZAR PYTHON</h1>
+					</section>
+					
+				</section>
+				<section>
+					<section><h1>¿Donde escribir codigo Python?</h1>
+					<h2>IDE vs Editores vs Notebook Jupyter</h2>
+					</section>
+					<section>
+						<h2>IDE</h2>
+							<ul>
+								<li>PyCharm
+									<ul>
+										<li>Python IDE
+for Professional Developers</li>
+<li><a href="https://www.jetbrains.com/pycharm/">www.jetbrains.com/pycharm/</a></li>
+<li>Community y Professional </li>
+									</ul>
+								</li>
+								<li>Ninja-IDE v2.3
+									<ul>
+										<li>Ninja-ide Is Not Just Another IDE</li>
+										<li>Centro de Software de Ubuntu</li>
+										<li><a href="http://ninja-ide.org/" target="_blank">http://ninja-ide.org/</a></li>
+									</ul>
+								</li>
+								<li>Spyder
+									<ul>
+										<li>The Scientific PYthon Development EnviRonment</li>
+										<li><a href="https://github.com/spyder-ide" target="_blank">https://github.com/spyder-ide</a></li>
+									</ul>
+								</li>
+							</ul>
+					</section>
+					<section>
+						<h2>Editores de Texto</h2>
+						<ul>
+							<li>Sublime Text</li>
+							<ul>
+								<li><a href="https://github.com/wuub/SublimeREPL">SublimeREPL</a></li>
+								<li class="nota"><a href="http://stackoverflow.com/questions/20861176/how-do-i-setup-sublimerepl-with-anacondas-interpreter">Stackoverflow:How Do I Setup SublimeREPL with Anaconda's interpreter?</a></li>
+							</ul>
+							<li>Vim</li>
+							<a target="_blank" href="http://www.vimawesome.com/">Vim Awesome</a>
+							<li>Emacs</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Notebook Jupyter</h2>
+						<p>Try Jupyter <a target="_blank" href="https://try.jupyter.org/">(try.jupyter.org)</a></p>
+						<p>Try Jupyter (Chrome) <a target="_blank" href="https://tmpnb.org/">(tmpnb.org)</a></p>
+					</section>
+					<section>
+						<h1>Probemos los IDEs y Editores</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>¿Donde encuentro más Python?</h1>
+					</section>
+					<section>
+						<h2>Listas de Correo</h2>
+						<ul>
+							<li>Python Argentina<a target="_blank" href="http://www.python.org.ar/lista/"> (www.python.org.ar/lista/)</a></li>
+							<li>Python España <a target="_blank" href="https://lists.es.python.org/listinfo/general">lists.es.python.org/listinfo/general</a></li>
+							<li>Python Paraguay <a target="_blank" href="https://groups.google.com/forum/#!forum/python-paraguay">(groups.google.com/forum/#!forum/python-paraguay)</a></li>
+							<li>Python Bolivia <a target="_blank" href="https://lists.riseup.net/www/subscribe/pythonbolivia">lists.riseup.net/www/subscribe/pythonbolivia</a></li>
+							<li>SciPy Latina America <a target="_blank" href="https://groups.google.com/forum/#!forum/scipyla">(groups.google.com/forum/#!forum/scipyla)</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Grupos Telegram</h2>
+						<ul>
+							<li>PyconAr 2016 Bahia Blanca<a target="_blank" href="http://telegram.me/pyconar16">(telegram.me/pyconar16)</a></li>
+							<li>Python Argentina <a target="_blank" href="http://telegram.me/pythonargentina">(telegram.me/pythonargentina)</a></li>
+							<li>Python España @PythonEsp <a target="_blank" href="http://telegram.me/PythonEsp">(telegram.me/PythonEsp)</a></li>
+							<li>Scipy Latin America @scipyla <a target="_blank" href="http://telegram.me/scipyla">(telegram.me/scipyla)</a></li>
+							<li>Scipy Sampa @ScipySP <a target="_blank" href="http://telegram.me/ScipySP">(telegram.me/ScipySP)</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Websites</h2>
+						<ul>
+							<li>Pybonacci - Python y Ciencia <a target="_blank" href="http://pybonacci.org/">pybonacci.org/</a></li>
+							<li>Python Argentina <a target="_blank" href="http://www.python.org.ar/">www.python.org.ar</a></li>
+							<li>Python <a target="_blank" href="https://www.python.org/">www.python.org</a></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h1>Preguntas?</h1>
+					<p><a target="_blank" href="#">Diapositiva en Github</a></p>
+					<h1>Muchas Gracias</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				transition: 'convex',
+				width: 1100,
+				height: 800,
+				margin: 0,
+				center: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+			});
+		</script>
+	</body>
+</html>
