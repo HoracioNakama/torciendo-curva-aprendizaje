@@ -4,3 +4,5 @@
 ### Instrucciones
 
 Descargar el zip, descomprimir y abrir el index.html
+
+O ver la version en PDF (torciendo-curva-aprendizaje.pdf)
